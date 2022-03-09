@@ -1,2 +1,2 @@
-from . import task
-__all__ = [task]
+from . import task, registered, tasktype
+__all__ = [task, registered, tasktype]
