@@ -25,4 +25,4 @@ example.cmd(Windows) or example.sh(Linux)
 python example.py
 ```
 또는 pyinstaller 등을 이용해 exe 파일로 빌드하세요.
-결과물은 MCMPL 플러그인어 설치된 서버의 /plugins/mcmpl/ 폴더에 넣으세요.
+결과물은 MCMPL 플러그인이 설치된 서버의 /plugins/mcmpl/ 폴더에 넣으세요.
