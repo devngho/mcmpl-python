@@ -1,10 +1,10 @@
 import json
 from typing import Dict, List, Callable
 
-from mcmpl1.request.request import Request
-from mcmpl1.request.requesttype import RequestType
-from mcmpl1.task.task import Task
-from mcmpl1.task.tasktype import TaskType
+from mcmpl.requests.request import Request
+from mcmpl.requests.requesttype import RequestType
+from mcmpl.tasks.task import Task
+from mcmpl.tasks.tasktype import TaskType
 
 task_registered: Dict[TaskType, List[Callable[[Task], None]]] = dict()
 

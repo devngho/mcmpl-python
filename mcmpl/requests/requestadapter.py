@@ -1,5 +1,5 @@
-from mcmpl1.request.request import Request
-from mcmpl1.request.requesttype import RequestType
+from mcmpl.requests.request import Request
+from mcmpl.requests.requesttype import RequestType
 
 
 def log(message: str):
