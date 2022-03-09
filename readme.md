@@ -6,11 +6,12 @@ MCMPL-Python은 [MC-MPL](https://github.com/devngho/mcmpl) 의 플러그인을 P
 pip install git+https://github.com/devngho/mcmpl-python.git
 ```
 example.py
+
 ```python
 from mcmpl.task import registered
 from mcmpl.task.task import Task
 from mcmpl.tasktype import TaskType
-from mcmpl.request import requestadapter
+from mcmpl.mcmpl.request import requestadapter
 
 
 def on_enable(task: Task):
