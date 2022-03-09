@@ -8,10 +8,10 @@ pip install git+https://github.com/devngho/mcmpl-python.git
 example.py
 
 ```python
-from mcmpl.task import registered
-from mcmpl.task.task import Task
-from mcmpl.tasktype import TaskType
-from mcmpl.mcmpl.request import requestadapter
+from mcmpl1.task import registered
+from mcmpl1.task.task import Task
+from mcmpl1.tasktype import TaskType
+from mcmpl.request import requestadapter
 
 
 def on_enable(task: Task):

@@ -1,4 +1,4 @@
-from mcmpl.request.requesttype import RequestType
+from mcmpl1.request.requesttype import RequestType
 import json
 
 
