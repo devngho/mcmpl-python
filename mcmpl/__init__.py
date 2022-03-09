@@ -1,3 +1,3 @@
-from . import request, task
+from . import requests, tasks
 
-__all__ = [request, task]
+__all__ = [requests, tasks]
