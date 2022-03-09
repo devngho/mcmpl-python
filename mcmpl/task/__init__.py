@@ -1,1 +1,2 @@
-from .task import *
+from . import task
+__all__ = [task]
