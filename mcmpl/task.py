@@ -1,4 +1,4 @@
-from mcmpl.tasks.tasktype import TaskType
+from mcmpl.tasktype import TaskType
 
 
 class Task:

@@ -1,3 +1,3 @@
-from . import requests, tasks
+from . import request, requestadapter, requesttype, registered, tasktype, task
 
-__all__ = [requests, tasks]
+__all__ = [request, requestadapter, requesttype, registered, tasktype, task]

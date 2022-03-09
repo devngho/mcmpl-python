@@ -11,7 +11,7 @@ example.py
 from mcmpl1.task import registered
 from mcmpl1.task.task import Task
 from mcmpl1.tasktype import TaskType
-from mcmpl.requests import requestadapter
+from mcmpl import requestadapter
 
 
 def on_enable(task: Task):
