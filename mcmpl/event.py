@@ -14,9 +14,3 @@ class Event:
 
     def modify(self, modify_type: str, data):
         self.modifiers[modify_type] = data
-
-    def done(self):
-        modifiers = []
-        for k, v in self.modifiers.items():
-            modifiers.append({"type": k, "data": v})
-        Request(RequestType.MODIFY_EVENT, {"uuid": self.uuid, "modifiers": modifiers})

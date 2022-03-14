@@ -28,7 +28,12 @@ def register_event(event_type: EventType, event_callable: Callable[[Event], None
 
 def task_event_callable(task: Task):
     for i in event_registered[EventType[task.data["type"]]]:
-        i(Event(task.uuid, EventType(task.data["type"]), task.data["data"]))
+        event = Event(task.uuid, EventType(task.data["type"]), task.data["data"])
+        i(event)
+        modifiers = []
+        for k, v in event.modifiers.items():
+            modifiers.append({"type": k, "data": v})
+        Request(RequestType.MODIFY_EVENT, {"uuid": event.uuid, "modifiers": modifiers})
 
 
 def listen():
