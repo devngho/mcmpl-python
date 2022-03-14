@@ -1,12 +1,15 @@
 import json
 from typing import Dict, List, Callable
 
+from mcmpl.event import Event
+from mcmpl.eventtype import EventType
 from mcmpl.request import Request
 from mcmpl.requesttype import RequestType
 from mcmpl.task import Task
 from mcmpl.tasktype import TaskType
 
 task_registered: Dict[TaskType, List[Callable[[Task], None]]] = dict()
+event_registered: Dict[EventType, List[Callable[[Event], None]]] = dict()
 
 
 def register_task(task_type: TaskType, task_callable: Callable[[Task], None]):
@@ -15,6 +18,17 @@ def register_task(task_type: TaskType, task_callable: Callable[[Task], None]):
     else:
         task_registered[task_type] = [task_callable]
         Request(RequestType.REGISTER_TASK, {"type": task_type.value}).fire()
+
+
+def register_event(event_type: EventType, event_callable: Callable[[Event], None]):
+    if TaskType.EVENT not in task_registered:
+        register_task(TaskType.EVENT, task_event_callable)
+    event_registered[event_type].append(event_callable)
+
+
+def task_event_callable(task: Task):
+    for i in event_registered[EventType[task.data["type"]]]:
+        i(Event(task.uuid, EventType(task.data["type"]), task.data["data"]))
 
 
 def listen():
