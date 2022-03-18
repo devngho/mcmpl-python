@@ -23,7 +23,10 @@ def register_task(task_type: TaskType, task_callable: Callable[[Task], None]):
 def register_event(event_type: EventType, event_callable: Callable[[Event], None]):
     if TaskType.EVENT not in task_registered:
         register_task(TaskType.EVENT, task_event_callable)
-    event_registered[event_type].append(event_callable)
+        event_registered[event_type] = [event_callable]
+    else:
+        event_registered[event_type].append(event_callable)
+    Request(RequestType.REGISTER_EVENT, {"type": event_type.value}).fire()
 
 
 def task_event_callable(task: Task):
